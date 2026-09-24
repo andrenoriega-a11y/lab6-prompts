@@ -1,48 +1,26 @@
-# Bitacora de prompts
- 
-Laboratorio 06: Fundamentos de Ingenieria de Prompts.
- 
-Herramienta de IA usada: (escribe aqui cual usaste)
+- **Qué cambié / por qué:** Incorporé los 5 componentes obligatorios (rol, instrucción, contexto, ejemplos y formato) junto con una restricción clara.
+- **Qué mejoró:** La respuesta de la IA fue sumamente precisa, estructurada, fácil de entender y lista para ejecutarse sin dependencias externas.
 
-## Ejercicio 2: Tokens y ventana de contexto
-| Texto | Caracteres | Tokens |
-|-------|------------|--------|
-| Los estudiantes programan en Java. | 34 | 7 |
-| The students program in Java. | 29 | 6 |
-| desafortunadamente | 18 | 4 |
-en el paso 4 si se acordo porque estabamos en el mismo chat y tenia el contexto ahi. en el cambio al chat nuevo ya no sabia nada porque estaba vacio y me pidio mas info o invento otra cosa.
-## Ejercicio 3: Temperatura
-| Temperatura | % de BiblioTec | Nombres en los 5 intentos |
-|------------|----------------|----------------------------------------------------|
-| 0          | 100.0%         | BiblioTec, BiblioTec, BiblioTec, BiblioTec, BiblioTec |
-| 0.5        | 65.3%          | PrestaLibro, BiblioTec, BiblioTec, LibroYa, BiblioTec |
-| 1          | 44.5%          | BiblioTec, BiblioTec, PrestaLibro, BiblioTec, BiblioTec |
-| 1.8        | 32.2%          | BiblioTec, LectoGo, BiblioTec, PrestaLibro, BiblioTec |
-Al subir la temperatura aumenta la variedad de nombres elegidos. El simulador no inventa palabras nuevas porque solo selecciona entre las opciones predefinidas.
-## Ejercicio 4: Prompt vago vs estructurado
-| Criterio | Prompt vago | Prompt estructurado |
-|----------|-------------|---------------------|
-| Menciona el objetivo del sistema | Sí | Sí |
-| Menciona a los usuarios principales | Sí | Sí |
-| Tiene exactamente 3 funcionalidades | No | Sí |
-| Está en 3 párrafos | No | Sí |
-| Lo usaría en un informe real | No | Sí |
-## Ejercicio 5: Anatomia de un prompt
- | Componente | Texto de mi prompt |
-|------------|--------------------|
-| Rol | Actúa como desarrollador Java. |
-| Instrucción | Crea un programa en Java para gestionar los productos de una tienda usando una clase Producto con los atributos código, nombre, precio y stock. |
-| Contexto | (Incluido en la instrucción del sistema de tienda). |
-| Ejemplo | Usa este estilo para los métodos: getPrecio(), setPrecio(double precio). |
-| Formato | Explica primero la estructura de la clase y luego presenta el código Java. |
-## Ejercicio 6: Del prompt basico al profesional
-| Qué revisar | Cumple (Sí / No) |
-| :--- | :--- |
-| ¿Está escrito en Java y usa Swing? | Sí |
-| ¿Pide correo y contraseña? | Sí |
-| ¿Explica el funcionamiento antes o después del código? | Sí |
-| ¿El código está organizado en clases? | Sí |
-| ¿Valida los datos que ingresa el usuario? | No |
+## Componentes del prompt final
 
-README.md
-- [Bitacora de prompts](prompts/BITACORA.md)
+| Componente      | Detalle en mi prompt                                         |
+| :-------------- | :----------------------------------------------------------- |
+| **Rol**         | Desarrollador Python senior especializado en inventarios     |
+| **Instrucción** | Escribir un script de CRUD en consola para productos         |
+| **Contexto**    | Uso por personal de caja en una tienda pequeña               |
+| **Ejemplo**     | Estructura de diccionario con código, nombre, stock y precio |
+| **Formato**     | Explicación breve seguida del bloque de código en Python     |
+
+## Evaluacion del resultado
+
+| Criterio                                                | Cumple (Sí / No) |
+| :------------------------------------------------------ | :--------------- |
+| ¿Usa los 5 componentes del prompt profesional?          | Sí               |
+| ¿Incluye restricciones claras (sin librerías externas)? | Sí               |
+| ¿El código está estructurado y documentado?             | Sí               |
+| ¿Explica claramente los cambios entre versiones?        | Sí               |
+
+## Errores que evite
+
+1. **Ser demasiado general:** En la versión 1 cometí el error de pedir solo "un CRUD" sin detalles; en la versión final detallé los campos exactos (código, stock, precio).
+2. **No indicar formato ni restricciones:** Al inicio la IA generaba código con librerías externas avanzadas; agregué la restricción explícita de usar solo estructuras nativas para evitarlo.
